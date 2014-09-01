@@ -8,4 +8,6 @@ else
 mkdir $HOME/backupBBM
 adb pull /sdcard/master.db $HOME/backupBBM/bbmBackup.sqlite
 fi
+echo "convert to mysql....."
+sqlite3 $HOME/backupBBM/bbmBackup.sqlite .dump > $HOME/backupBBM/bbmBackup-mysql.sql
 echo "done........."
