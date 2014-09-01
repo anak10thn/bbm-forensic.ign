@@ -1,5 +1,11 @@
 #!/bin/bash
 echo "backup data....."
 adb shell "su -c 'cp /data/user/0/com.bbm/files/bbmcore/master.db /sdcard'"
-adb pull /sdcard/master.db $HOME
+if [ -d $HOME/backupBBM ]
+then
+adb pull /sdcard/master.db $HOME/backupBBM/bbmBackup.sqlite
+else
+mkdir $HOME/backupBBM
+adb pull /sdcard/master.db $HOME/backupBBM/bbmBackup.sqlite
+fi
 echo "done........."

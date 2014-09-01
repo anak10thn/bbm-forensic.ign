@@ -17,6 +17,9 @@
 			if(ip != ""){
 				exec("adb connect "+ip);
 			}
+			else{
+				exec("adb connect");
+			}
 		});
 		$("#device").click(function(){
 			exec("adb devices");
