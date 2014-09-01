@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=BBM Forensic
+Exec=/usr/bin/ignsdk -p /opt/ignsdk/bbm-forensic.ign
+Icon=/opt/ignsdk/bbm-forensic.ign/icons/app.png
+Terminal=false
+Type=Application
+Categories=Development

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="qrc:///js/jquery.js"></script>
+<script type="text/javascript">
+	var sys = ign.sys();
+	function exec(comm){
+		sys.exec(comm);
+		sys.out.connect(function(out){
+			$('#out').html("");
+			$('#out').prepend(out+"<br>");
+		});
+	}
+	$(document).ready(function(){
+		$("#adb").click(function(){
+			var ip = $("#ip").val();
+			if(ip != ""){
+				exec("adb connect "+ip);
+			}
+		});
+		$("#device").click(function(){
+			exec("adb devices");
+		});
+
+	});
+</script>
+</head>
+<body>
+<input type="text" id="ip"> <input type="submit" id="adb" value="Connect To ADB"> <input type="submit" id="device" value="check device"> <br>
+<div id="out" style="width:100%;height:100%;border:1"></div>
+</body>
+</html>
