@@ -1,2 +1,2 @@
 #!/bin/bash
-md5sum -c $HOME/backupBBM/bbmBackup.sqlite.md5
+sha1sum -c $HOME/backupBBM/bbmBackup.sqlite.sha1
