@@ -1,16 +1,16 @@
 {
-  "config" : { 
+  "config" : {
 		"debug" : true,
 		"websecurity" : true,
 		"name" : "BBM Forensic"
   },
-  "window" : { 
-		"transparent" : false, 
-		"noframe" : false, 
+  "window" : {
+		"transparent" : false,
+		"noframe" : false,
 		"fullscreen" : false,
 		"maximize" : false,
-		"width" : 600,
-		"height" : 400
+		"width" : 700,
+		"height" : 500
 	},
   "button" : [
 		"back",

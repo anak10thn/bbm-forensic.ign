@@ -1,0 +1,1 @@
+select users.*,con.PersonalMessage from users left join Contacts as con on con.UserId = users.UserId

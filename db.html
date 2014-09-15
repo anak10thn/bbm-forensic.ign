@@ -19,7 +19,7 @@
 
 	var contact = function(){
 		con();
-		var result = sql.query("select * from users");
+		var result = sql.query("select users.*,con.PersonalMessage,con.RegistrationPassword,con.EncryptedEncryptionKey,con.Location from users left join Contacts as con on con.UserId = users.UserId");
 		html = "<h1>Contact List</h1>";
 		result.content.forEach(function(i,j){
 			html += "Display Name : "+i.DisplayName+"<br>";
@@ -28,6 +28,21 @@
 			}
 			html += "Client Version : "+i.ClientVersion+"<br>";
 			html += "Pin : "+i.Pin+"<br>";
+			if(i.PersonalMessage != ""){
+				html += "Personal Message : "+i.PersonalMessage+"<br>";
+			}
+
+			if(i.RegistrationPassword != ""){
+				html += "Registration Password : "+i.RegistrationPassword+"<br>";
+			}
+
+			if(i.EncryptedEncryptionKey != ""){
+				html += "Encrypted Encryption Key : "+i.EncryptedEncryptionKey+"<br>";
+			}
+
+			if(i.Location != ""){
+				html += "Location : "+i.Location+"<br>";
+			}
 			html += "<hr>"
 		});
 		$("#out").html(html);
