@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="qrc:///js/jquery.js"></script>
+<script type="text/javascript">
+	var sys = ign.sys();
+	var fs = ign.filesystem();
+	var home = fs.homePath();
+	var sql = home+"/backupBBM/bbmBackup.sqlite";
+	if(!fs.info(sql).exists){
+		alert("DB File not exist");
+		window.location.href = "index.html";
+	}
+	$(document).ready(function(){
+		
+	});
+</script>
+</head>
+<body>
+<a href="index.html">back</a><br>
+<div id="out" style="width:100%;height:100%;border:1"></div>
+</body>
+</html>
