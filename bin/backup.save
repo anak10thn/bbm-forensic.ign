@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "backup data....."
+adb shell "su -c 'cp /data/user/0/com.bbm/files/bbmcore/master.db /sdcard'"
+if [ -d $HOME/backupBBM ]
+then
+adb pull /sdcard/master.db $HOME/backupBBM/bbmBackup.sqlite
+else
+mkdir $HOME/backupBBM
+adb pull /sdcard/master.db $HOME/backupBBM/bbmBackup.sqlite
+fi
+echo "create hash"
+
+echo "convert to mysql....."
+sqlite3 $HOME/backupBBM/bbmBackup.sqlite .dump > $HOME/backupBBM/bbmBackup-mysql.sql
+echo "done........."
