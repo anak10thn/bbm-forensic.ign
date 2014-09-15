@@ -6,18 +6,37 @@
 	var sys = ign.sys();
 	var fs = ign.filesystem();
 	var home = fs.homePath();
-	var sql = home+"/backupBBM/bbmBackup.sqlite";
-	if(!fs.info(sql).exists){
+	var sql = ign.sql();
+	var sql_file = home+"/backupBBM/bbmBackup.sqlite";
+	if(!fs.info(sql_file).exists){
 		alert("DB File not exist");
 		window.location.href = "index.html";
 	}
-	$(document).ready(function(){
-		
-	});
+
+	var con = function(){
+		sql.driver("sqlite",sql_file);
+	}
+
+	var contact = function(){
+		con();
+		var result = sql.query("select * from users");
+		html = "<h1>Contact List</h1>";
+		result.content.forEach(function(i,j){
+			html += "Display Name : "+i.DisplayName+"<br>";
+			if(i.Nickname != ""){
+				html += "Nick Name : "+i.Nickname+"<br>";
+			}
+			html += "Client Version : "+i.ClientVersion+"<br>";
+			html += "Pin : "+i.Pin+"<br>";
+			html += "<hr>"
+		});
+		$("#out").html(html);
+	}
 </script>
 </head>
 <body>
 <a href="index.html">back</a><br>
+<a href="#" onclick="contact()">Show Contact</a><br>
 <div id="out" style="width:100%;height:100%;border:1"></div>
 </body>
 </html>
