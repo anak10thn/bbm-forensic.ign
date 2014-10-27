@@ -7,57 +7,151 @@
 	var fs = ign.filesystem();
 	var home = fs.homePath();
 	var sql_file = home+"/backupBBM/";
+	var res = "(*^*&$^&$)";
+	var adbServ = false;
+	var os = sys.exec('uname');
 	function exec(comm){
+		sys.kill();
 		sys.exec(comm);
 		sys.out.connect(function(out){
-			$('#out').empty();
-			$('#out').append(out+"<br>");
+			if(out != res){
+				console.log(res);
+				res = out;
+				$('#out').append(res+"<br>");
+			}
 		});
 	}
 
 	function reset(){
-		$('#out').empty();
-		var file_list = fs.list(sql_file);
-		file_list.forEach(function(i,j){
-			if(fs.info(i).isFile){
-				fs.fileRemove(i);
-				$('#out').append("remove file "+i+"<br>");
-			}
-		});
+		var r = confirm("Apakah Anda Yakin?");
+		if (r == true) {
+			$('#out').empty();
+			var file_list = fs.list(sql_file);
+			file_list.forEach(function(i,j){
+				if(fs.info(i).isFile){
+					fs.fileRemove(i);
+					$('#out').append("remove file "+i+"<br>");
+				}
+			});
+		}
 	}
 	$(document).ready(function(){
 		$("#adb").click(function(){
+			$('#out').empty();
 			var ip = $("#ip").val();
 			if(ip != ""){
+				if(!adbServ){
+					exec("adb kill-server");
+				}
 				exec("adb connect "+ip);
 			}
 			else{
-				exec("adb connect");
+				if(!adbServ){
+					exec("adb kill-server");
+				}
+				exec("adb devices");
 			}
 		});
 		$("#device").click(function(){
+			$('#out').empty();
+			if(!adbServ){
+				exec("adb kill-server");
+			}
 			exec("adb devices");
 		});
 
 		$("#backupdb").click(function(){
+			$('#out').empty();
 			exec("bin/backup");
 		});
 
 		$("#chksum").click(function(){
+			$('#out').empty();
 			exec("bin/checksum");
 		});
 
 	});
 </script>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="js/bootstrap.min.js"></script>
 </head>
-<body>
-<input type="text" id="ip">
-<input type="submit" id="adb" value="Connect To ADB">
-<input type="submit" id="device" value="check device">
-<input type="submit" id="backupdb" value="backupdb">
-<input type="submit" id="chksum" value="Check HASH"> <br>
-<a href="db.html">Extract Data</a><br>
-<a href="#" onclick="reset()">Reset</a><br>
-<div id="out" style="width:100%;height:100%;border:1"></div>
+<body >
+<div class="container">
+	<div class="row">
+		<div class="col-nav-12">
+			<nav class="navbar navbar-default" role="navigation">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#">BBM Forensik</a>
+			    </div>
+
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">
+			        <li class="active"><a href="#">Forensik</a></li>
+			        <li><a href="#">Analisis</a></li>
+			      </ul>
+
+			      <ul class="nav navbar-nav navbar-right">
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Seting <span class="caret"></span></a>
+			          <ul class="dropdown-menu" role="menu">
+									<li><a href="#" onclick="reset()">Reset Semua Data</a></li>
+			            <li><a href="#" onclick="ign.getToggleFullScreen()">Layar Penuh</a></li>
+			            <li><a href="#" onclick="ign.quit()">Keluar</a></li>
+			          </ul>
+			        </li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-3">
+			<div class="list-group">
+			  <a href="#" class="list-group-item list-group-item-info disabled">
+			    Menu
+			  </a>
+			  <a href="#" class="list-group-item active">Koneksi ADB</a>
+			  <a href="#" class="list-group-item">Hash Barang Bukti</a>
+			  <a href="#" class="list-group-item">Ambil Barang Bukti</a>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Tahap Forensik</h3>
+			  </div>
+			  <div class="panel-body">
+					<div id="s1" style="">
+						<div class="col-xs-4">
+					    <input type="text"  id="ip" class="form-control" placeholder="IP Devices...">
+					  </div>
+						<input type="submit" id="adb" value="Connect To ADB" class="btn btn-primary"><hr>
+					</div>
+			    <div id="out" style="height:100%"></div>
+			  </div>
+				<div class="panel-footer">
+					<input type="submit" id="backupdb" value="Tahap Selanjudnya" class="btn btn-primary">
+				</div>
+			</div>
+
+			<input type="submit" id="backupdb" value="backupdb"><br>
+			<input type="submit" id="chksum" value="Check HASH"> <br>
+			<!-- page -->
+
+		</div>
+	</div>
+</div>
 </body>
 </html>
