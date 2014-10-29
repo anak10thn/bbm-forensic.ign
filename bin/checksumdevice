@@ -1,0 +1,4 @@
+#!/bin/bash
+shasum -a 1 -c $HOME/backupBBM/master.db.sha1
+echo "Hashing...........................done"
+exit 0

@@ -7,7 +7,7 @@
 	var fs = ign.filesystem();
 	var home = fs.homePath();
 	var sql = ign.sql();
-	var sql_file = home+"/backupBBM/bbmBackup.sqlite";
+	var sql_file = home+"/backupBBM/master.db";
 	if(!fs.info(sql_file).exists){
 		alert("DB File not exist");
 		window.location.href = "index.html";
@@ -47,11 +47,87 @@
 		});
 		$("#out").html(html);
 	}
+
+	$(document).ready(function(){
+		contact();
+	});
 </script>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="js/bootstrap.min.js"></script>
 </head>
-<body style="background:rgba(236,236,236,1)">
-<a href="index.html">back</a><br>
-<a href="#" onclick="contact()">Show Contact</a><br>
-<div id="out" style="width:100%;height:100%;border:1"></div>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-nav-12">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">BBM Fork</a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li><a href="index.html">Forensik</a></li>
+							<li class="active"><a href="db.html">Analisis</a></li>
+						</ul>
+
+						<ul class="nav navbar-nav navbar-right">
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Seting <span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#" onclick="reset()">Reset Semua Data</a></li>
+									<li><a href="#" onclick="ign.getToggleFullScreen()">Layar Penuh</a></li>
+									<li><a href="#" onclick="ign.quit()">Keluar</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-3">
+			<div class="list-group">
+				<a href="#" class="list-group-item list-group-item-info disabled">
+					Menu
+				</a>
+				<a href="#" id="stepnav1" class="list-group-item stepnav active">Kontak</a>
+				<a href="#" id="stepnav2" class="list-group-item stepnav">db2</a>
+				<a href="#" id="stepnav3" class="list-group-item stepnav">db3</a>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Tahap Forensik</h3>
+				</div>
+				<div class="panel-body">
+					<div id="out" style="height:100%">sddf</div>
+				</div>
+				<!--<div class="panel-footer">
+					<input type="submit" id="step1" onclick="backupdb()" value="Next" class="btn btn-primary step" style="">
+					<input type="submit" id="step2" onclick="hash()" value="Next" class="btn btn-primary step" style="display:none">
+				</div>-->
+			</div>
+			<!--
+			<input type="submit" id="backupdb" value="backupdb"><br>
+			<input type="submit" id="chksum" value="Check HASH"><br>
+		-->
+			<!-- page -->
+
+		</div>
+	</div>
+</div>
 </body>
 </html>

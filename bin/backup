@@ -1,16 +1,21 @@
 #!/bin/bash
-echo "backup data....."
+SHA=`adb shell "su -c 'sha1sum /data/user/0/com.bbm/files/bbmcore/master.db'"`
+if [ -d $HOME/backupBBM ]
+then
+echo $SHA | sed "s|/data/user/0/com.bbm/files/bbmcore|$HOME/backupBBM|g" | sed "s| |  |g" > $HOME/backupBBM/master.db.sha1
+else
+mkdir $HOME/backupBBM
+echo $SHA | sed "s|/data/user/0/com.bbm/files/bbmcore|$HOME/backupBBM|g" | sed "s| |  |g" > $HOME/backupBBM/master.db.sha1
+fi
+echo "Hashing file master............ok"
 adb shell "su -c 'cp /data/user/0/com.bbm/files/bbmcore/master.db /sdcard'"
 if [ -d $HOME/backupBBM ]
 then
-adb pull /sdcard/master.db $HOME/backupBBM/bbmBackup.sqlite
+adb pull /sdcard/master.db $HOME/backupBBM/master.db
 else
 mkdir $HOME/backupBBM
-adb pull /sdcard/master.db $HOME/backupBBM/bbmBackup.sqlite
+adb pull /sdcard/master.db $HOME/backupBBM/master.db
 fi
-echo "hash file..."
-sha1sum $HOME/backupBBM/bbmBackup.sqlite > $HOME/backupBBM/bbmBackup.sqlite.sha1
-echo "convert to mysql....."
-sqlite3 $HOME/backupBBM/bbmBackup.sqlite .dump > $HOME/backupBBM/bbmBackup-mysql.sql
-echo "done........."
+echo "backup data............ok"
+
 exit 0

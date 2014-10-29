@@ -1,2 +1,0 @@
-#!/bin/bash
-sha1sum -c $HOME/backupBBM/bbmBackup.sqlite.sha1

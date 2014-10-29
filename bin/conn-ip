@@ -1,4 +1,0 @@
-#!/bin/bash
-adb kill-server
-adb connect $1
-exit 0
