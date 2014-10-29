@@ -8,48 +8,67 @@
 	var home = fs.homePath();
 	var sql = ign.sql();
 	var sql_file = home+"/backupBBM/master.db";
-	if(!fs.info(sql_file).exists){
-		alert("DB File not exist");
-		window.location.href = "index.html";
-	}
 
-	var con = function(){
+	function con(){
 		sql.driver("sqlite",sql_file);
 	}
 
-	var contact = function(){
+	function reset(){
+		var r = confirm("Apakah Anda Yakin?");
+		if (r == true) {
+			$('#out').empty();
+			var file_list = fs.list(home+"/backupBBM/");
+			file_list.forEach(function(i,j){
+				if(fs.info(i).isFile){
+					fs.fileRemove(i);
+					$('#out').append("remove file "+i+"<br>");
+				}
+			});
+		}
+	}
+
+	function contact(){
+		$('.stepnav').removeClass('active');
+		$('#stepnav1').addClass('active');
 		con();
 		var result = sql.query("select users.*,con.PersonalMessage,con.RegistrationPassword,con.EncryptedEncryptionKey,con.Location from users left join Contacts as con on con.UserId = users.UserId");
-		html = "<h1>Contact List</h1>";
+		html = "<thead><tr><th>UserId</th> <th>Name</th> <th>PIN</th></tr></thead>";
+		html += "<tbody>";
 		result.content.forEach(function(i,j){
-			html += "Display Name : "+i.DisplayName+"<br>";
-			if(i.Nickname != ""){
-				html += "Nick Name : "+i.Nickname+"<br>";
-			}
-			html += "Client Version : "+i.ClientVersion+"<br>";
-			html += "Pin : "+i.Pin+"<br>";
-			if(i.PersonalMessage != ""){
-				html += "Personal Message : "+i.PersonalMessage+"<br>";
-			}
+			html += "<tr><td>"+i.UserId+"</td>";
+			html += "<td>"+i.DisplayName+"</td>";
+			html += "<td>"+i.Pin+"</td></tr>";
 
-			if(i.RegistrationPassword != ""){
-				html += "Registration Password : "+i.RegistrationPassword+"<br>";
-			}
-
-			if(i.EncryptedEncryptionKey != ""){
-				html += "Encrypted Encryption Key : "+i.EncryptedEncryptionKey+"<br>";
-			}
-
-			if(i.Location != ""){
-				html += "Location : "+i.Location+"<br>";
-			}
-			html += "<hr>"
 		});
+		html += "</tbody>";
+		$("#out").html(html);
+	}
+
+	function status(){
+		$('.stepnav').removeClass('active');
+		$('#stepnav2').addClass('active');
+		con();
+		var result = sql.query("select users.*,con.PersonalMessage,con.RegistrationPassword,con.EncryptedEncryptionKey,con.Location from users left join Contacts as con on con.UserId = users.UserId");
+		html = "<thead><tr><th>UserId</th> <th>Name</th> <th>Status</th></tr></thead>";
+		html += "<tbody>";
+		result.content.forEach(function(i,j){
+			html += "<tr><td>"+i.UserId+"</td>";
+			html += "<td>"+i.DisplayName+"</td>";
+			html += "<td>"+i.PersonalMessage+"</td></tr>";
+
+		});
+		html += "</tbody>";
 		$("#out").html(html);
 	}
 
 	$(document).ready(function(){
-		contact();
+		if(!fs.info(sql_file).exists){
+			alert("DB File not exist");
+			window.location.href = "index.html";
+		}
+		else{
+				contact();
+		}
 	});
 </script>
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -69,7 +88,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#">BBM Fork</a>
+						<a class="navbar-brand" href="#" style="padding-top:5px"><img src="icons/icon.png"> BBM Pork</a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
@@ -102,9 +121,9 @@
 				<a href="#" class="list-group-item list-group-item-info disabled">
 					Menu
 				</a>
-				<a href="#" id="stepnav1" class="list-group-item stepnav active">Kontak</a>
-				<a href="#" id="stepnav2" class="list-group-item stepnav">db2</a>
-				<a href="#" id="stepnav3" class="list-group-item stepnav">db3</a>
+				<a href="#" id="stepnav1" onclick="contact()" class="list-group-item stepnav active">Kontak</a>
+				<a href="#" id="stepnav2" onclick="status()" class="list-group-item stepnav">Status</a>
+				<a href="#" id="stepnav3" class="list-group-item stepnav">Percakapan</a>
 			</div>
 		</div>
 		<div class="col-md-9">
@@ -113,18 +132,13 @@
 					<h3 class="panel-title">Tahap Forensik</h3>
 				</div>
 				<div class="panel-body">
-					<div id="out" style="height:100%">sddf</div>
+					<table class="table table-striped" id="out">
+
+					</table>
+					<!--<div id="out" style="height:100%">sddf</div>-->
 				</div>
-				<!--<div class="panel-footer">
-					<input type="submit" id="step1" onclick="backupdb()" value="Next" class="btn btn-primary step" style="">
-					<input type="submit" id="step2" onclick="hash()" value="Next" class="btn btn-primary step" style="display:none">
-				</div>-->
 			</div>
-			<!--
-			<input type="submit" id="backupdb" value="backupdb"><br>
-			<input type="submit" id="chksum" value="Check HASH"><br>
-		-->
-			<!-- page -->
+
 
 		</div>
 	</div>
