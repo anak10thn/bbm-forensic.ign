@@ -1,6 +1,6 @@
 #!/bin/bash
 ADB=""
-SHA=`$ADB/adb shell "su -c 'sha1sum /data/user/0/com.bbm/files/bbmcore/master.db'"`
+SHA=`adb shell "su -c 'sha1sum /data/user/0/com.bbm/files/bbmcore/master.db'"`
 if [ -d $HOME/backupBBM ]
 then
 echo $SHA | sed "s|/data/user/0/com.bbm/files/bbmcore|$HOME/backupBBM|g" | sed "s| |  |g" > $HOME/backupBBM/master.db.sha1
@@ -9,13 +9,13 @@ mkdir $HOME/backupBBM
 echo $SHA | sed "s|/data/user/0/com.bbm/files/bbmcore|$HOME/backupBBM|g" | sed "s| |  |g" > $HOME/backupBBM/master.db.sha1
 fi
 echo "Hashing file master............ok"
-$ADB/adb shell "su -c 'cp /data/user/0/com.bbm/files/bbmcore/master.db /sdcard'"
+adb shell "su -c 'cp /data/user/0/com.bbm/files/bbmcore/master.db /sdcard'"
 if [ -d $HOME/backupBBM ]
 then
-$ADB/adb pull /sdcard/master.db $HOME/backupBBM/master.db
+adb pull /sdcard/master.db $HOME/backupBBM/master.db
 else
 mkdir $HOME/backupBBM
-$ADB/adb pull /sdcard/master.db $HOME/backupBBM/master.db
+adb pull /sdcard/master.db $HOME/backupBBM/master.db
 fi
 echo "backup data............ok"
 
