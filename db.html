@@ -2,12 +2,20 @@
 <html>
 <head>
 <script type="text/javascript" src="qrc:///js/jquery.js"></script>
+<style>
+.fucktable {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+</style>
 <script type="text/javascript">
 	var sys = ign.sys();
 	var fs = ign.filesystem();
 	var home = fs.homePath();
 	var sql = ign.sql();
 	var sql_file = home+"/backupBBM/master.db";
+	var query_conv = "select TextMessages.*,owner.DisplayName as owner,participant.DisplayName as participant,recive.DisplayName as recivient, Conversations.OwnerId,Participants.UserId as username from TextMessages left join Participants on Participants.ParticipantId = TextMessages.ParticipantId left join Conversations on Conversations.ConversationId = TextMessages.ConversationId left join Participants as own on own.ConversationId = Conversations.ConversationId and own.participantId = Conversations.OwnerId left join Users as owner on owner.UserId = own.UserId left join Users as participant on participant.UserId = Participants.UserId left join Participants as rec on (case when owner.UserId == Participants.UserId then rec.ConversationId = Conversations.ConversationId and rec.participantId != Conversations.OwnerId else rec.ConversationId = Conversations.ConversationId and rec.participantId = Conversations.OwnerId end) left join Users as recive on recive.UserId = rec.UserId";
+	var query_user = "select users.*,con.PersonalMessage,con.RegistrationPassword,con.EncryptedEncryptionKey,con.Location from users left join Contacts as con on con.UserId = users.UserId";
 
 	function con(){
 		sql.driver("sqlite",sql_file);
@@ -31,7 +39,7 @@
 		$('.stepnav').removeClass('active');
 		$('#stepnav1').addClass('active');
 		con();
-		var result = sql.query("select users.*,con.PersonalMessage,con.RegistrationPassword,con.EncryptedEncryptionKey,con.Location from users left join Contacts as con on con.UserId = users.UserId");
+		var result = sql.query(query_user);
 		html = "<thead><tr><th>UserId</th> <th>Name</th> <th>PIN</th></tr></thead>";
 		html += "<tbody>";
 		result.content.forEach(function(i,j){
@@ -48,13 +56,31 @@
 		$('.stepnav').removeClass('active');
 		$('#stepnav2').addClass('active');
 		con();
-		var result = sql.query("select users.*,con.PersonalMessage,con.RegistrationPassword,con.EncryptedEncryptionKey,con.Location from users left join Contacts as con on con.UserId = users.UserId");
+		var result = sql.query(query_user);
 		html = "<thead><tr><th>UserId</th> <th>Name</th> <th>Status</th></tr></thead>";
 		html += "<tbody>";
 		result.content.forEach(function(i,j){
 			html += "<tr><td>"+i.UserId+"</td>";
 			html += "<td>"+i.DisplayName+"</td>";
 			html += "<td>"+i.PersonalMessage+"</td></tr>";
+
+		});
+		html += "</tbody>";
+		$("#out").html(html);
+	}
+
+	function conv(){
+		$('.stepnav').removeClass('active');
+		$('#stepnav3').addClass('active');
+		con();
+		var result = sql.query(query_conv);
+		html = "<thead><tr><th>Pengirim</th> <th>Penerima</th> <th>Pesan</th></tr></thead>";
+		html += "<tbody>";
+		result.content.forEach(function(i,j){
+			//html += "<tr><td>"+i.owner+"</td>";
+			html += "<tr><td>"+i.participant+"</td>";
+			html += "<td>"+i.recivient+"</td>";
+			html += "<td>"+i.Content+"</td></tr>";
 
 		});
 		html += "</tbody>";
@@ -123,7 +149,7 @@
 				</a>
 				<a href="#" id="stepnav1" onclick="contact()" class="list-group-item stepnav active">Kontak</a>
 				<a href="#" id="stepnav2" onclick="status()" class="list-group-item stepnav">Status</a>
-				<a href="#" id="stepnav3" class="list-group-item stepnav">Percakapan</a>
+				<a href="#" id="stepnav3" onclick="conv()" class="list-group-item stepnav">Percakapan</a>
 			</div>
 		</div>
 		<div class="col-md-9">
@@ -132,7 +158,7 @@
 					<h3 class="panel-title">Tahap Forensik</h3>
 				</div>
 				<div class="panel-body">
-					<table class="table table-striped" id="out">
+					<table class="table table-striped fucktable" id="out">
 
 					</table>
 					<!--<div id="out" style="height:100%">sddf</div>-->
