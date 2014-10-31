@@ -8,6 +8,7 @@ else
 mkdir $HOME/backupBBM
 echo $SHA | sed "s|/data/user/0/com.bbm/files/bbmcore|$HOME/backupBBM|g" | sed "s| |  |g" > $HOME/backupBBM/master.db.sha1
 fi
+echo $SHA
 echo "Hashing file master............ok"
 adb shell "su -c 'cp /data/user/0/com.bbm/files/bbmcore/master.db /sdcard'"
 if [ -d $HOME/backupBBM ]

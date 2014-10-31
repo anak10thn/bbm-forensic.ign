@@ -2,7 +2,7 @@
   "config" : {
 		"debug" : true,
 		"websecurity" : true,
-		"name" : "BBM Forensic Tools"
+		"name" : "Alat Bantu Forensik BBM"
   },
   "window" : {
 		"transparent" : false,

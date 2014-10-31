@@ -1,4 +1,10 @@
 #!/bin/bash
+SHAO=`cat $HOME/backupBBM/master.db.sha1|sed "s|$HOME/backupBBM|/data/user/0/com.bbm/files/bbmcore|g"`
+SHA=`shasum -a 1 $HOME/backupBBM/master.db`
+echo "Hash berkas temuan..."
+echo $SHAO
+echo "Hash salinan barang bukti"
+echo $SHA
 shasum -a 1 -c $HOME/backupBBM/master.db.sha1
 echo "Hashing...........................done"
 exit 0
