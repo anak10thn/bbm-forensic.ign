@@ -38,6 +38,7 @@
 	function contact(){
 		$('.stepnav').removeClass('active');
 		$('#stepnav1').addClass('active');
+    $('#export').attr("onclick","exportCsv('contact')")
 		con();
 		var result = sql.query(query_user);
 		html = "<thead><tr><th>UserId</th> <th>Name</th> <th>PIN</th></tr></thead>";
@@ -55,6 +56,7 @@
 	function status(){
 		$('.stepnav').removeClass('active');
 		$('#stepnav2').addClass('active');
+    $('#export').attr("onclick","exportCsv('status')")
 		con();
 		var result = sql.query(query_user);
 		html = "<thead><tr><th>UserId</th> <th>Name</th> <th>Status</th></tr></thead>";
@@ -72,6 +74,7 @@
 	function conv(){
 		$('.stepnav').removeClass('active');
 		$('#stepnav3').addClass('active');
+    $('#export').attr("onclick","exportCsv('conv')")
 		con();
 		var result = sql.query(query_conv);
 		html = "<thead><tr><th>Pengirim</th> <th>Penerima</th> <th>Pesan</th></tr></thead>";
@@ -86,6 +89,34 @@
 		html += "</tbody>";
 		$("#out").html(html);
 	}
+
+  function exportCsv(dt){
+    var save = fs.saveFileDialog();
+    if(dt == "contact"){
+      var result = sql.query(query_user);
+      var data = "";
+      result.content.forEach(function(i,j){
+        data += i.UserId+","+i.DisplayName+","+i.Pin+"\n";
+      });
+      fs.fileWrite(save,data);
+    }
+    else if(dt == "status"){
+      var result = sql.query(query_user);
+      var data = "";
+      result.content.forEach(function(i,j){
+        data += i.UserId+","+i.DisplayName+","+i.PersonalMessage+"\n";
+      });
+      fs.fileWrite(save,data);
+    }
+    else if(dt == "conv"){
+      var result = sql.query(query_conv);
+      var data = "";
+      result.content.forEach(function(i,j){
+        data += i.participant+","+i.recivient+","+i.Content+"\n";
+      });
+      fs.fileWrite(save,data);
+    }
+  }
 
 	$(document).ready(function(){
 		if(!fs.info(sql_file).exists){
@@ -155,7 +186,7 @@
 		<div class="col-md-9">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">Tahap Forensik</h3>
+					<input type="submit" id="export" onclick="exportCsv('contact')" value="Backup To CSV" class="btn btn-primary step" style="">
 				</div>
 				<div class="panel-body">
 					<table class="table table-striped fucktable" id="out">
