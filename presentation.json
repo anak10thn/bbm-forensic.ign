@@ -1,0 +1,752 @@
+{
+  "slides": [
+    {
+      "components": [
+        {
+          "TextBox": {},
+          "x": 212,
+          "y": 311,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "text": "<div style=\"text-align: center;\"><span style=\"font-family: Ubuntu, sans-serif;\">Purwarupa&nbsp;</span><span style=\"font-family: Ubuntu, sans-serif;\">BBMPork</span></div><div style=\"text-align: center;\"><span style=\"font-family: Ubuntu, sans-serif;\">Dengan &nbsp;IGN-SDK</span></div>",
+          "size": 68,
+          "selected": false
+        },
+        {
+          "TextBox": {},
+          "x": 324,
+          "y": 496,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "text": "<font color=\"#cd5151\">@milisdad, @anak10thn</font>",
+          "size": 36,
+          "selected": false
+        },
+        {
+          "src": "http://i.imgur.com/xsQlmNz.png",
+          "type": "Image",
+          "x": 389,
+          "y": 80,
+          "scale": {
+            "x": 0.478515625,
+            "y": 0.478515625,
+            "width": 245,
+            "height": 245
+          },
+          "imageType": "PNG",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 0,
+      "rotateZ": 0,
+      "index": 0,
+      "selected": true,
+      "active": true,
+      "markdown": "",
+      "x": 180,
+      "y": 180,
+      "background": "bg-solid-smoke",
+      "surface": "bg-surf-grad-light"
+    },
+    {
+      "components": [
+        {
+          "TextBox": {},
+          "x": 75,
+          "y": 63,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "size": 68,
+          "text": "<font face=\"Ubuntu\"><b>BBMPork</b></font>",
+          "selected": false
+        },
+        {
+          "TextBox": {},
+          "x": 236,
+          "y": 251,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "size": 51,
+          "text": "<ul><li><font face=\"Ubuntu, sans-serif\"><span style=\"line-height: normal;\">Logical forensics</span><br></font></li><li><font face=\"Ubuntu, sans-serif\"><span style=\"line-height: 1em;\">Lisensi MIT</span><br></font></li><li><font face=\"Ubuntu, sans-serif\"><span style=\"line-height: 1em;\">IGN-SDK</span><br></font></li><li><font face=\"Ubuntu, sans-serif\"><span style=\"line-height: 1em;\">Analisis Percakapan</span><br></font></li><li><span style=\"line-height: 1em;\"><font face=\"Ubuntu, sans-serif\">BBM android</font></span><br></li></ul>",
+          "selected": false
+        },
+        {
+          "src": "http://i.imgur.com/xsQlmNz.png",
+          "type": "Image",
+          "x": 393,
+          "y": 44,
+          "scale": {
+            "x": 0.228515625,
+            "y": 0.228515625,
+            "width": 117,
+            "height": 117
+          },
+          "imageType": "PNG",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 0,
+      "rotateZ": 0,
+      "index": 1,
+      "selected": false,
+      "active": false,
+      "x": 516,
+      "y": 184
+    },
+    {
+      "components": [
+        {
+          "TextBox": {},
+          "x": 388,
+          "y": 338,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "text": "<font face=\"Ubuntu\" color=\"#cec7c7\">Latar Belakang</font>",
+          "size": 72,
+          "selected": false
+        },
+        {
+          "src": "http://bestclipartblog.com/clipart-pics/police-clip-art-1.gif",
+          "type": "Image",
+          "x": 105,
+          "y": 262,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "imageType": "GIF",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 0,
+      "rotateZ": 1.57,
+      "index": 2,
+      "selected": false,
+      "active": false,
+      "background": "bg-solid-orange",
+      "x": 587,
+      "y": 481
+    },
+    {
+      "components": [
+        {
+          "TextBox": {},
+          "x": 670,
+          "y": 443,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "text": "<font face=\"Ubuntu\">Survey Gartner - 2014<br></font>",
+          "size": 30,
+          "selected": false
+        },
+        {
+          "TextBox": {},
+          "x": 95,
+          "y": 274,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "text": "<div style=\"text-align: center;\"><span style=\"font-family: Ubuntu;\">Pertumbuhan sistem</span></div><font color=\"#333333\" face=\"Ubuntu\"><div style=\"text-align: center;\">operasi mobile mencapai 6.9%</div></font>",
+          "size": 64,
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 0.96,
+      "rotateZ": 0,
+      "index": 3,
+      "selected": false,
+      "active": false,
+      "x": 867,
+      "y": 185
+    },
+    {
+      "components": [
+        {
+          "src": "http://i.imgur.com/0nsPP3g.png",
+          "type": "Image",
+          "x": 142,
+          "y": 118,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "imageType": "PNG",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 0,
+      "rotateZ": 0,
+      "index": 4,
+      "selected": false,
+      "active": false,
+      "x": 954,
+      "y": 479
+    },
+    {
+      "components": [
+        {
+          "TextBox": {},
+          "x": 67,
+          "y": 291,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "size": 47,
+          "text": "<div style=\"text-align: center;\"><span style=\"font-family: Ubuntu;\">Tahun 2010 tercatat +/- 55%</span><span style=\"font-family: Ubuntu;\">&nbsp;</span></div><span style=\"font-family: Ubuntu; text-align: center;\"><div style=\"text-align: start;\">barang bukti&nbsp;pada 52 kasus berupa ponsel</div></span>",
+          "selected": false
+        },
+        {
+          "TextBox": {},
+          "x": 542,
+          "y": 423,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "size": 25,
+          "text": "Digital Analysis Forensics Team (DFAT)<br>",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 0.6,
+      "rotateZ": 0,
+      "index": 5,
+      "selected": false,
+      "active": false,
+      "x": 254,
+      "y": 477
+    },
+    {
+      "components": [
+        {
+          "TextBox": {},
+          "x": 365,
+          "y": 327,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "size": 57,
+          "text": "<div style=\"text-align: center;\"><span style=\"color: rgb(206, 199, 199); font-family: Ubuntu;\">Prinsip Penanganan</span></div><font face=\"Ubuntu\" color=\"#cec7c7\"><div style=\"text-align: center;\">Barang Bukti</div></font>",
+          "selected": false
+        },
+        {
+          "src": "http://www.aperfectworld.org/clipart/government/donutcop.png",
+          "type": "Image",
+          "x": 77,
+          "y": 150,
+          "scale": {
+            "x": 0.31625,
+            "y": 0.31625,
+            "width": 252.99999999999997,
+            "height": 441.80125
+          },
+          "imageType": "PNG",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": -0.58,
+      "rotateZ": 0,
+      "index": 6,
+      "selected": false,
+      "active": false,
+      "background": "bg-solid-sky",
+      "x": 1860,
+      "y": 460
+    },
+    {
+      "components": [
+        {
+          "TextBox": {},
+          "x": 203,
+          "y": 236,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "size": 50,
+          "text": "<div><ol><li><span style=\"font-family: Ubuntu; line-height: normal;\">Tidak sembarang mengakses</span><br></li><li><span style=\"font-family: Ubuntu; line-height: normal;\">Harus Kompeten</span><br></li><li><span style=\"font-family: Ubuntu; line-height: normal;\">Harus dicatat</span><br></li><li><span style=\"font-family: Ubuntu; line-height: normal;\">Orang yang memahami hukum</span><br></li></ol></div>",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 0,
+      "rotateZ": 1.58,
+      "index": 7,
+      "selected": false,
+      "active": false,
+      "x": 2140,
+      "y": 460
+    },
+    {
+      "components": [
+        {
+          "TextBox": {},
+          "x": 425,
+          "y": 322,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "size": 60,
+          "text": "<font color=\"#333333\" face=\"Ubuntu\">Prosedur Akuisisi</font>",
+          "selected": false
+        },
+        {
+          "src": "http://www.paragonventures.com/193_merger_acquisition.gif",
+          "type": "Image",
+          "x": 55,
+          "y": 179,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "imageType": "GIF",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 0.7,
+      "rotateZ": 0,
+      "index": 8,
+      "selected": false,
+      "active": false,
+      "background": "bg-solid-yellow",
+      "x": 2420,
+      "y": 460
+    },
+    {
+      "components": [
+        {
+          "TextBox": {},
+          "x": 102,
+          "y": 290,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "size": 39,
+          "text": "\n\t\n\t\n\t\n\n\n<ol>\n\t<li>\n<p style=\"margin-bottom: 0in; line-height: 100%\">Apakah ponsel\n\tdalam&nbsp;<span style=\"line-height: 100%;\">kondisi hidup</span></p></li><li>\n<p style=\"margin-bottom: 0in; line-height: 100%\">Apakah layar\n\tponsel dalam kondisi terkunci</p>\n\t</li><li>\n<p style=\"margin-bottom: 0in; line-height: 100%\">Apakah\n\tmemungkinkan terkoneksi melalui ADB</p>\n\t</li><li>\n<p style=\"margin-bottom: 0in; line-height: 100%\">Apakah\n\tmemiliki akses root</p>\n</li></ol>",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 0,
+      "rotateZ": 0,
+      "index": 9,
+      "selected": false,
+      "active": false,
+      "x": 2700,
+      "y": 460
+    },
+    {
+      "components": [
+        {
+          "src": "http://i.imgur.com/zPrdSZw.png",
+          "type": "Image",
+          "x": 1,
+          "y": 17,
+          "scale": {
+            "x": 0.8432343234323433,
+            "y": 0.8432343234323433,
+            "width": 1022,
+            "height": 736.1435643564357
+          },
+          "imageType": "PNG",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 0,
+      "rotateZ": -1.57,
+      "index": 10,
+      "selected": false,
+      "active": false,
+      "background": "bg-solid-light",
+      "x": 2968,
+      "y": 164
+    },
+    {
+      "components": [
+        {
+          "src": "https://raw.githubusercontent.com/anak10thn/ignsdk-art/master/logos/ignsdk-rocklovecode.png",
+          "type": "Image",
+          "x": 200,
+          "y": 247,
+          "scale": {
+            "x": 0.80125,
+            "y": 0.80125,
+            "width": 641,
+            "height": 224.35
+          },
+          "imageType": "PNG",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 2.22,
+      "rotateZ": 0,
+      "index": 11,
+      "selected": false,
+      "active": false,
+      "x": 3260,
+      "y": 460,
+      "background": "bg-solid-light"
+    },
+    {
+      "components": [
+        {
+          "TextBox": {},
+          "x": 125,
+          "y": 73,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "size": 44,
+          "text": "<ul><li><span style=\"font-family: Ubuntu; line-height: normal;\">Software Development Kit</span><br></li><li><span style=\"font-family: Ubuntu; line-height: normal;\">Aplikasi Hybrid<br></span></li><li><span style=\"font-family: Ubuntu; line-height: normal;\">Tersedia untuk linux dan OSX</span></li><li><font face=\"Ubuntu\"><span style=\"line-height: normal;\">http://anak10thn.github.io/ignsdk-qt/</span></font><br></li></ul>",
+          "selected": false
+        },
+        {
+          "src": "http://i.imgur.com/klZC162.png",
+          "type": "Image",
+          "x": 52,
+          "y": 347,
+          "scale": {
+            "x": 0.5932944606413995,
+            "y": 0.5932944606413995,
+            "width": 407,
+            "height": 309.6997084548105
+          },
+          "imageType": "PNG",
+          "selected": false
+        },
+        {
+          "src": "http://iconizer.net/files/DefaultIcon_ver_0.11/orig/arrow-alt-right.png",
+          "type": "Image",
+          "x": 450,
+          "y": 430,
+          "scale": {
+            "x": 0.5,
+            "y": 0.5,
+            "width": 128,
+            "height": 128
+          },
+          "imageType": "PNG",
+          "selected": false
+        },
+        {
+          "src": "http://i.imgur.com/nJwbebK.png",
+          "type": "Image",
+          "x": 580,
+          "y": 379,
+          "scale": {
+            "x": 0.37559580552907534,
+            "y": 0.37559580552907534,
+            "width": 394.00000000000006,
+            "height": 233.99618684461393
+          },
+          "imageType": "PNG",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 0,
+      "rotateZ": -1.16,
+      "index": 12,
+      "selected": false,
+      "active": false,
+      "x": 3540,
+      "y": 740
+    },
+    {
+      "components": [
+        {
+          "TextBox": {},
+          "x": 71,
+          "y": 55,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "size": 37,
+          "text": "<font color=\"#333333\" face=\"Ubuntu\"><b>API &amp; Changelog IGNSDK 1.1.6</b></font>",
+          "selected": false
+        },
+        {
+          "TextBox": {},
+          "x": 341.3333333333333,
+          "y": 256,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "size": 41,
+          "text": "<ul><li><span style=\"font-family: Ubuntu; line-height: normal;\">File System API</span><br></li><li><span style=\"font-family: Ubuntu; line-height: normal;\">SQL API</span></li><li><span style=\"font-family: Ubuntu; line-height: normal;\">Executable Wrapper</span></li></ul>",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 1.2,
+      "rotateZ": 0.92,
+      "index": 13,
+      "selected": false,
+      "active": false,
+      "x": 3820,
+      "y": 740
+    },
+    {
+      "components": [
+        {
+          "TextBox": {},
+          "x": 74,
+          "y": 51,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "size": 45,
+          "text": "<font color=\"#333333\" face=\"Ubuntu\">Forensik</font>",
+          "selected": false
+        },
+        {
+          "src": "http://i.imgur.com/qBBWwB5.png",
+          "type": "Image",
+          "x": 67,
+          "y": 158,
+          "scale": {
+            "x": 0.840152235965747,
+            "y": 0.840152235965747,
+            "width": 883,
+            "height": 522.5746907706946
+          },
+          "imageType": "PNG",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 0,
+      "rotateZ": -0.74,
+      "index": 14,
+      "selected": false,
+      "active": false,
+      "x": 4100,
+      "y": 740
+    },
+    {
+      "components": [
+        {
+          "src": "http://i.imgur.com/2MWpLZ3.png",
+          "type": "Image",
+          "x": 98,
+          "y": 196,
+          "scale": {
+            "x": 0.7874165872259294,
+            "y": 0.7874165872259294,
+            "width": 826,
+            "height": 490.560533841754
+          },
+          "imageType": "PNG",
+          "selected": false
+        },
+        {
+          "TextBox": {},
+          "x": 79,
+          "y": 42,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "size": 46,
+          "text": "<font color=\"#333333\" face=\"Ubuntu\">Analisis</font>",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 0.9,
+      "rotateZ": 0,
+      "index": 15,
+      "selected": false,
+      "active": false,
+      "x": 4380,
+      "y": 740
+    },
+    {
+      "components": [
+        {
+          "TextBox": {},
+          "x": 67,
+          "y": 51,
+          "scale": {
+            "x": 1,
+            "y": 1
+          },
+          "type": "TextBox",
+          "size": 48,
+          "text": "<font color=\"#333333\" face=\"Ubuntu\">Demo Video</font>",
+          "selected": false
+        },
+        {
+          "src": "https://www.youtube.com/watch?v=EOMdF5psFhE",
+          "type": "Video",
+          "x": 135,
+          "y": 143,
+          "scale": {
+            "width": 763.0531914893614,
+            "height": 567.8085158327791
+          },
+          "shortSrc": "EOMdF5psFhE",
+          "videoType": "youtube",
+          "srcType": "yt",
+          "selected": false
+        }
+      ],
+      "z": 0,
+      "impScale": 3,
+      "rotateX": 0,
+      "rotateY": 0,
+      "rotateZ": 1.58,
+      "index": 16,
+      "selected": false,
+      "active": false,
+      "x": 4340,
+      "y": 388
+    }
+  ],
+  "background": "bg-solid-smoke",
+  "activeSlide": {
+    "components": [
+      {
+        "TextBox": {},
+        "x": 212,
+        "y": 311,
+        "scale": {
+          "x": 1,
+          "y": 1
+        },
+        "type": "TextBox",
+        "text": "<div style=\"text-align: center;\"><span style=\"font-family: Ubuntu, sans-serif;\">Purwarupa&nbsp;</span><span style=\"font-family: Ubuntu, sans-serif;\">BBMPork</span></div><div style=\"text-align: center;\"><span style=\"font-family: Ubuntu, sans-serif;\">Dengan &nbsp;IGN-SDK</span></div>",
+        "size": 68,
+        "selected": false
+      },
+      {
+        "TextBox": {},
+        "x": 324,
+        "y": 496,
+        "scale": {
+          "x": 1,
+          "y": 1
+        },
+        "type": "TextBox",
+        "text": "<font color=\"#cd5151\">@milisdad, @anak10thn</font>",
+        "size": 36,
+        "selected": false
+      },
+      {
+        "src": "http://i.imgur.com/xsQlmNz.png",
+        "type": "Image",
+        "x": 389,
+        "y": 80,
+        "scale": {
+          "x": 0.478515625,
+          "y": 0.478515625,
+          "width": 245,
+          "height": 245
+        },
+        "imageType": "PNG",
+        "selected": false
+      }
+    ],
+    "z": 0,
+    "impScale": 3,
+    "rotateX": 0,
+    "rotateY": 0,
+    "rotateZ": 0,
+    "index": 0,
+    "selected": true,
+    "active": true,
+    "markdown": "",
+    "x": 180,
+    "y": 180,
+    "background": "bg-solid-smoke",
+    "surface": "bg-surf-grad-light"
+  },
+  "fileName": "presentation-unnamed",
+  "deckVersion": "1.0",
+  "customBackgrounds": {
+    "bgs": []
+  },
+  "overviewX": 2280,
+  "overviewY": 452
+}
