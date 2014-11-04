@@ -35,12 +35,19 @@
 		}
 	}
 
+  function openfile(){
+    var file = fs.openFileDialog();
+    sql_file = file;
+    contact();
+  }
+
 	function contact(){
 		$('.stepnav').removeClass('active');
 		$('#stepnav1').addClass('active');
     $('#export').attr("onclick","exportCsv('contact')")
 		con();
 		var result = sql.query(query_user);
+    console.log(result);
 		html = "<thead><tr><th>UserId</th> <th>Name</th> <th>PIN</th></tr></thead>";
 		html += "<tbody>";
 		result.content.forEach(function(i,j){
@@ -59,6 +66,7 @@
     $('#export').attr("onclick","exportCsv('status')")
 		con();
 		var result = sql.query(query_user);
+    console.log(result);
 		html = "<thead><tr><th>UserId</th> <th>Name</th> <th>Status</th></tr></thead>";
 		html += "<tbody>";
 		result.content.forEach(function(i,j){
@@ -77,14 +85,16 @@
     $('#export').attr("onclick","exportCsv('conv')")
 		con();
 		var result = sql.query(query_conv);
-		html = "<thead><tr><th>Pengirim</th> <th>Penerima</th> <th>Pesan</th></tr></thead>";
+    console.log(result);
+		html = "<thead><tr><th>Pengirim</th> <th>Penerima</th> <th>Pesan</th> <th>Time Stamp</th></tr></thead>";
 		html += "<tbody>";
 		result.content.forEach(function(i,j){
 			//html += "<tr><td>"+i.owner+"</td>";
 			html += "<tr><td>"+i.participant+"</td>";
 			html += "<td>"+i.recivient+"</td>";
-			html += "<td>"+i.Content+"</td></tr>";
-
+			html += "<td>"+i.Content+"</td>";
+      var date = new Date(i.Timestamp);
+      html += "<td>"+date+"</td></tr>";
 		});
 		html += "</tbody>";
 		$("#out").html(html);
@@ -151,6 +161,7 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
+              <li><a href="#" onclick="openfile()"><i class="glyphicon glyphicon-folder-open"></i>&nbsp;&nbsp;Open File</a></li>
 							<li><a href="index.html">Forensik</a></li>
 							<li class="active"><a href="db.html">Analisis</a></li>
 						</ul>
