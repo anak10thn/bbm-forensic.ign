@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=BBM Forensic
+Name=BBMPork
 Exec=/usr/bin/ignsdk -p /opt/ignsdk/bbm-forensic.ign
 Icon=/opt/ignsdk/bbm-forensic.ign/icons/app.png
 Terminal=false

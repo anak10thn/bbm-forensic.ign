@@ -19,7 +19,7 @@ Requires:ignsdk
 BuildArch:noarch
 %description
 %{description}
-Forensic tools for BBM
+Alat Bantu Forensik BBM
 
 %prep
 %setup -q -n %{name}
