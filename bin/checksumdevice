@@ -6,5 +6,5 @@ echo $SHAO
 echo "Hash Salinan Barang Bukti"
 echo $SHA
 shasum -a 1 -c $HOME/backupBBM/master.db.sha1
-echo "Hashing...........................done"
+echo "Proses Hash ...........................selesai"
 exit 0
