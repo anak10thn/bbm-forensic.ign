@@ -18,6 +18,6 @@ else
 mkdir $HOME/backupBBM
 adb pull /sdcard/master.db $HOME/backupBBM/master.db
 fi
-echo "backup data............ok"
+echo "Menyimpan Barang Bukti di ~/backupBBM ............ok"
 
 exit 0
