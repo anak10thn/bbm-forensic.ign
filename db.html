@@ -93,7 +93,7 @@
 			html += "<tr><td>"+i.participant+"</td>";
 			html += "<td>"+i.recivient+"</td>";
 			html += "<td>"+i.Content+"</td>";
-      var date = new Date(i.Timestamp);
+      var date = new Date(parseInt(i.Timestamp)*1000);
       html += "<td>"+date+"</td></tr>";
 		});
 		html += "</tbody>";
