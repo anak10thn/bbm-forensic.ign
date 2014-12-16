@@ -1,22 +1,22 @@
 #!/bin/bash
 ADB=""
-SHA=`adb shell "su -c 'sha1sum /data/user/0/com.bbm/files/bbmcore/master.db'"`
+SHA=`adb shell "su -c 'sha1sum /data/data/com.bbm/files/bbmcore/master.enc'"`
 if [ -d $HOME/backupBBM ]
 then
-echo $SHA | sed "s|/data/user/0/com.bbm/files/bbmcore|$HOME/backupBBM|g" | sed "s| |  |g" > $HOME/backupBBM/master.db.sha1
+echo $SHA | sed "s|/data/data/com.bbm/files/bbmcore/|$HOME/backupBBM|g" | sed "s| |  |g" > $HOME/backupBBM/master.enc.sha1
 else
 mkdir $HOME/backupBBM
-echo $SHA | sed "s|/data/user/0/com.bbm/files/bbmcore|$HOME/backupBBM|g" | sed "s| |  |g" > $HOME/backupBBM/master.db.sha1
+echo $SHA | sed "s|/data/data/com.bbm/files/bbmcore/|$HOME/backupBBM|g" | sed "s| |  |g" > $HOME/backupBBM/master.enc.sha1
 fi
 echo $SHA
 echo "Hash Berkas Barang Bukti ............ok"
-adb shell "su -c 'cp /data/user/0/com.bbm/files/bbmcore/master.db /sdcard'"
+adb shell "su -c 'cp /data/data/com.bbm/files/bbmcore/master.enc /sdcard'"
 if [ -d $HOME/backupBBM ]
 then
-adb pull /sdcard/master.db $HOME/backupBBM/master.db
+adb pull /sdcard/master.enc $HOME/backupBBM/master.enc
 else
 mkdir $HOME/backupBBM
-adb pull /sdcard/master.db $HOME/backupBBM/master.db
+adb pull /sdcard/master.enc $HOME/backupBBM/master.enc
 fi
 echo "Menyimpan Barang Bukti di ~/backupBBM ............ok"
 
