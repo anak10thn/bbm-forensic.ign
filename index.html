@@ -11,9 +11,9 @@
 	var adbServ = false;
 	var os = sys.exec('uname');
 	function exec(comm){
-		sys.kill();
-		sys.exec(comm);
-		sys.out.connect(function(out){
+		//sys.kill();
+		var exec = sys.exec(comm);
+		exec.out.connect(function(out){
 			if(out != res){
 				console.log(res);
 				res = out;

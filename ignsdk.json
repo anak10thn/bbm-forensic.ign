@@ -7,7 +7,7 @@
   "window" : {
 		"transparent" : false,
 		"noframe" : false,
-		"fullscreen" : true,
+		"fullscreen" : false,
 		"maximize" : false,
 		"width" : 1050,
 		"height" : 600
