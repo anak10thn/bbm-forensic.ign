@@ -112,7 +112,8 @@
       var result = sql.query(query_user);
       var data = "";
       result.content.forEach(function(i,j){
-        data += i.UserId+","+i.DisplayName+","+i.Pin+"\n";
+        var date = new Date(parseInt(i.Timestamp)*1000);
+        data += i.UserId+","+i.DisplayName+","+i.Pin+","+date+"\n";
       });
       fs.fileWrite(save,data);
     }
@@ -120,7 +121,8 @@
       var result = sql.query(query_user);
       var data = "";
       result.content.forEach(function(i,j){
-        data += i.UserId+","+i.DisplayName+","+i.PersonalMessage+"\n";
+        var date = new Date(parseInt(i.Timestamp)*1000);
+        data += i.UserId+","+i.DisplayName+","+i.PersonalMessage+","+date+"\n";
       });
       fs.fileWrite(save,data);
     }
@@ -128,7 +130,8 @@
       var result = sql.query(query_conv);
       var data = "";
       result.content.forEach(function(i,j){
-        data += i.participant+","+i.recivient+","+i.Content+"\n";
+        var date = new Date(parseInt(i.Timestamp)*1000);
+        data += i.participant+","+i.recivient+",\""+i.Content+"\","+date+"\n";
       });
       fs.fileWrite(save,data);
     }
