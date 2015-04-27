@@ -1,10 +1,10 @@
 #!/bin/bash
-SHAO=`cat $HOME/backupBBM/master.db.sha1|sed "s|$HOME/backupBBM|/data/user/0/com.bbm/files/bbmcore|g"`
-SHA=`shasum -a 1 $HOME/backupBBM/master.db`
+SHAO=`cat $HOME/ForensikBBM/master.db.sha1|sed "s|$HOME/ForensikBBM|/data/data/com.bbm/files/bbmcore|g"`
+SHA=`shasum -a 1 $HOME/ForensikBBM/master.db`
 echo "Hash Barang Bukti..."
 echo $SHAO
 echo "Hash Salinan Barang Bukti"
 echo $SHA
-shasum -a 1 -c $HOME/backupBBM/master.db.sha1
+shasum -a 1 -c $HOME/ForensikBBM/master.db.sha1
 echo "Proses Hash ...........................selesai"
 exit 0
