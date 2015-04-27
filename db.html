@@ -128,13 +128,28 @@
     }
     else if(dt == "conv"){
       var result = sql.query(query_conv);
-      var data = "";
+      var data = "\"part\",\"rec\",\"text\",\"date\"";
       result.content.forEach(function(i,j){
         var date = new Date(parseInt(i.Timestamp)*1000);
-        data += i.participant+","+i.recivient+",\""+i.Content+"\","+date+"\n";
+        data += "\""+i.participant+"\",\""+i.recivient+"\",\""+i.Content+"\",\""+date+"\"\n";
       });
       fs.fileWrite(save,data);
     }
+  }
+    
+  function anal(){
+      var result = sql.query(query_conv);
+      var data = "\"part\",\"rec\",\"text\",\"date\"";
+      result.content.forEach(function(i,j){
+        var date = new Date(parseInt(i.Timestamp)*1000);
+        data += "\""+i.participant+"\",\""+i.recivient+"\",\""+i.Content+"\",\""+date+"\"\n";
+      });
+      fs.fileWrite(dir+"/anal.csv",data);
+      var plot = sys.exec("Rscript bin/anal.r");
+      plot.out.connect(function(data){
+        console.log(data);
+      });
+      sys.cliOut("open Rplots.pdf");
   }
 
 	$(document).ready(function(){
@@ -207,6 +222,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<input type="submit" id="export" onclick="exportCsv('contact')" value="Backup To CSV" class="btn btn-primary step" style="">
+                    <input type="submit" id="anal" onclick="anal()" value="Analysis" class="btn btn-primary step" style="">
 				</div>
 				<div class="panel-body">
 					<table class="table table-striped fucktable" id="out">

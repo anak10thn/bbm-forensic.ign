@@ -1,6 +1,6 @@
 {
   "config" : {
-		"debug" : true,
+		"debug" : false,
 		"websecurity" : true,
 		"name" : "Alat Bantu Forensik BBM"
   },
