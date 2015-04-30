@@ -9,7 +9,7 @@ mkdir $HOME/backupBBM
 echo $SHA | sed "s|/data/data/com.bbm/files/bbmcore|$HOME/ForensikBBM|g" | sed "s| |  |g" > $HOME/ForensikBBM/master.db.sha1
 fi
 echo $SHA
-echo "Hash Berkas Barang Bukti ............ok"
+echo "Hash Berkas Barang Bukti ............OK"
 adb shell "su -c 'cp /data/data/com.bbm/files/bbmcore/master.db /sdcard'"
 if [ -d $HOME/ForensikBBM ]
 then
