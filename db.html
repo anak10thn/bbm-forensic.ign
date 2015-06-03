@@ -19,6 +19,7 @@
     //Diganti query menggunakan master.db yang diambil dari BBM5
 	//var query_user = "select users.*,con.PersonalMessage,con.RegistrationPassword,con.EncryptedEncryptionKey,con.Location from users left join Contacts as con on con.UserId = users.UserId";
     var query_user = "select users.*,contacts.PersonalMessage,userpins.* from users, userpins, contacts where users.UserId=contacts.UserId and userpins.UserId=users.UserId";
+    var query_identity = "select userpins.UserId, users.DisplayName, userpins.Pin from userpins, users where userpins.UserId=users.UserId and userpins.UserId = 0";
 	function con(){
 		sql.driver("sqlite",sql_file);
 	}
@@ -43,9 +44,27 @@
     contact();
   }
 
-	function contact(){
+    function identity(){
 		$('.stepnav').removeClass('active');
 		$('#stepnav1').addClass('active');
+        $('#export').attr("onclick","exportCsv('status')")
+		con();
+		var result = sql.query(query_identity);
+    console.log(result);
+		html = "<thead><tr><th>UserId</th> <th>Nama Pemilik</th> <th>PIN</th></tr></thead>";
+		html += "<tbody>";
+		result.content.forEach(function(i,j){
+			html += "<tr><td>"+i.UserId+"</td>";
+			html += "<td>"+i.DisplayName+"</td>";
+			html += "<td>"+i.Pin+"</td></tr>";
+
+		});
+		html += "</tbody>";
+		$("#out").html(html);
+	}
+	function contact(){
+		$('.stepnav').removeClass('active');
+		$('#stepnav2').addClass('active');
     $('#export').attr("onclick","exportCsv('contact')")
 		con();
 		var result = sql.query(query_user);
@@ -64,7 +83,7 @@
 
 	function status(){
 		$('.stepnav').removeClass('active');
-		$('#stepnav2').addClass('active');
+		$('#stepnav3').addClass('active');
     $('#export').attr("onclick","exportCsv('status')")
 		con();
 		var result = sql.query(query_user);
@@ -83,7 +102,7 @@
 
 	function conv(){
 		$('.stepnav').removeClass('active');
-		$('#stepnav3').addClass('active');
+		$('#stepnav4').addClass('active');
     $('#export').attr("onclick","exportCsv('conv')")
 		con();
 		var result = sql.query(query_conv);
@@ -199,10 +218,10 @@
 				<a href="#" class="list-group-item list-group-item-info disabled">
 					Menu
 				</a>
-                <a href="#" id="stepnav1" onclick="contact()" class="list-group-item stepnav active">Identitas</a>
-				<a href="#" id="stepnav1" onclick="contact()" class="list-group-item stepnav active">Kontak</a>
-				<a href="#" id="stepnav2" onclick="status()" class="list-group-item stepnav">Status</a>
-				<a href="#" id="stepnav3" onclick="conv()" class="list-group-item stepnav">Percakapan</a>
+                <a href="#" id="stepnav1" onclick="identity()" class="list-group-item stepnav active">Identitas</a>
+				<a href="#" id="stepnav2" onclick="contact()" class="list-group-item stepnav">Kontak</a>
+				<a href="#" id="stepnav3" onclick="status()" class="list-group-item stepnav">Status</a>
+				<a href="#" id="stepnav4" onclick="conv()" class="list-group-item stepnav">Percakapan</a>
 			</div>
 		</div>
 		<div class="col-md-9">
