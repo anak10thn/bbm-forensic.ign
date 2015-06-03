@@ -105,7 +105,7 @@
     var date = new Date();
     var option = {
      title : "Save File To",
-     path : dir+"/backup"+date.getTime()+".csv"
+     path : dir+"/salinan"+date.getTime()+".csv"
     }
     var save = fs.saveFileDialog(option);
     if(dt == "contact"){
@@ -206,7 +206,7 @@
 		<div class="col-md-9">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<input type="submit" id="export" onclick="exportCsv('contact')" value="Backup To CSV" class="btn btn-primary step" style="">
+					<input type="submit" id="export" onclick="exportCsv('contact')" value="Konversi ke CSV" class="btn btn-primary step" style="">
 				</div>
 				<div class="panel-body">
 					<table class="table table-striped fucktable" id="out">
