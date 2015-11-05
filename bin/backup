@@ -1,16 +1,16 @@
 #!/bin/bash
 ADB=""
-SHA=`adb shell "su -c 'sha1sum /data/data/com.bbm/files/bbmcore/master.db'"`
+SHA=`adb shell "su -c 'sha1sum /data/data/com.bbm5.rr_mod5/files/bbmcore/master.db'"`
 if [ -d $HOME/ForensikBBM ]
 then
-echo $SHA | sed "s|/data/data/com.bbm/files/bbmcore|$HOME/ForensikBBM|g" | sed "s| |  |g" > $HOME/ForensikBBM/master.db.sha1
+echo $SHA | sed "s|/data/data/com.bbm5.rr_mod5/files/bbmcore|$HOME/ForensikBBM|g" | sed "s| |  |g" > $HOME/ForensikBBM/master.db.sha1
 else
 mkdir $HOME/backupBBM
-echo $SHA | sed "s|/data/data/com.bbm/files/bbmcore|$HOME/ForensikBBM|g" | sed "s| |  |g" > $HOME/ForensikBBM/master.db.sha1
+echo $SHA | sed "s|/data/data/com.bbm5.rr_mod5/files/bbmcore|$HOME/ForensikBBM|g" | sed "s| |  |g" > $HOME/ForensikBBM/master.db.sha1
 fi
 echo $SHA
 echo "Hash Berkas Barang Bukti ............OK"
-adb shell "su -c 'cp /data/data/com.bbm/files/bbmcore/master.db /sdcard'"
+adb shell "su -c 'cp /data/data/com.bbm5.rr_mod5/files/bbmcore/master.db /sdcard'"
 if [ -d $HOME/ForensikBBM ]
 then
 adb pull /sdcard/master.db $HOME/ForensikBBM/master.db
